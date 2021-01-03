@@ -53,7 +53,7 @@ function ProductItem({ product, images, classes, productId }) {
                         imageActive == null ? <img className={classes.myImage} src="https://vinatex.com.vn/wp-content/themes/vinatex/assets/images/default-thumbnail.png"></img>
                             : <div className="imageInList">
                                 <img className={classes.myImage}
-                                    src={"/image/" + imageActive.path}></img>
+                                    src={"image/" + imageActive.path}></img>
                             </div>
                     }
                 </TableCell>

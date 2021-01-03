@@ -99,7 +99,7 @@ function ProductCreate(props) {
             size: product.size,
             material: product.material,
             price: product.price,
-            quantity: 0,
+            quantity: product.quantity,
             category: (category.id == null && category.name == "") ? null : {id: category.id, name: category.name},
             base64Images: images
         }

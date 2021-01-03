@@ -150,6 +150,10 @@ public class ReceiptServiceImp implements IReceiptsService {
             productsReciptEntity.setProduct(variantEntity);
             productsReciptEntity.setReceipts(receiptEntity);
             productsReceiptRepository.save(productsReciptEntity);
+            if(dto.getStatus() == 1){
+                productsReceiptRepository.update(variantEntity.getId(), variantEntity.getQuantity(), item.getQuantity());
+                productsReceiptRepository.updatePrice(variantEntity.getId(),item.getPrice());
+            }
         }
         if (receiptEntity.getCode() == "") {
             receiptEntity.setCode("PON00" + receiptEntity.getId() + "");
@@ -162,6 +166,7 @@ public class ReceiptServiceImp implements IReceiptsService {
             paymentEntity.setReceipt(receiptEntity);
             paymentRepository.save(paymentEntity);
         }
+
 
         return receiptEntity.getId();
 

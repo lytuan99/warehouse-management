@@ -70,6 +70,7 @@ class ReceiptCreateMate extends Component {
       status: this.state.status,
       payment: payment,
     };
+    debugger
     console.log('data', receipt);
     let error = false;
 
